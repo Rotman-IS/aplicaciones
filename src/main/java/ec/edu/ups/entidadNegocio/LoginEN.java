@@ -2,24 +2,28 @@ package ec.edu.ups.entidadNegocio;
 
 public class LoginEN {
 	
-	private String usuario;
-	private String contrasenia;
-	
-	
-	
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getContrasenia() {
-		return contrasenia;
-	}
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
-	}
-	
-	
+	//atributos de Login
+	private String codigo;
 
+	
+	//Getters y Setters
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public void ingresar() {
+		//metodo para ingresar al sistema
+	}
+
+	public void consultarHoraSalida() {
+		//metodo para consultar la hora de salida del reprsentado
+	}
+
+	public void consultarHoraLlegada() {
+		//metodo para consultar la hora de llegada del reprsentado
+	}
 }
