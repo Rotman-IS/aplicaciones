@@ -8,7 +8,7 @@ div#contenedor{
 	margin:auto;
 	width: 800px;
 	height: 900px;
-	background-color: c9e7f9;
+	background-color: #E4E4E4;
 	
 	
 	
@@ -20,9 +20,18 @@ div#cabecera{
 	float: center;
 	width: autor;
 	height: 100px;
-	background-color: #cdf98d;
+	background-color: #FFCC99;
 	/*border: double;*/
 		
+}
+
+div#menu{
+	
+	float: center;
+	width: 800px;
+	height: 50px;
+	background-color: #E4E4E4;	
+	
 }
 
 div#cuerpo{
@@ -30,18 +39,32 @@ div#cuerpo{
 	float: right;
 	width: 800px;
 	height: 750px;
-	background-color: #f8f0fa;
+	background-color: #FFCC99;
 	
 }
 
 div#pie{
 	
-	float: inherit;
+	float: center;
 	width: 800px;
 	height: 59px;
-	background-color: #cdf98d;	
+	background-color: red;	
 	
 }
+
+div#imagen{
+	
+	float: right;	
+}
+
+div#imagen{
+	
+	float: left;
+	
+	
+	
+}
+
 
 p#parrafo1{
 	float: left;
