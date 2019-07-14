@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
+</h:head> 
+	<body> 
+		<div id="principal">
+			<div id="cabecera">
+				<ui:insert name="header">
+					<ui:include src="/plantilla/header.xhtml" />
+				</ui:insert>
+			</div>
+			
+			<div id="menu">
+				<ui:include src="/plantilla/menu.xhtml" />
+			</div>
+			
+			<div id="cuerpo">
+				<div id="contenedor">
+					<ui:insert name="contenido">
+					</ui:insert>
+				</div>
+			</div>
+			
+			<div id="pie">
+				<ui:insert name="footer">
+					<ui:include src="/plantilla/footer.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+	</body> 
+</html>

@@ -1,0 +1,95 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#principal{
+	width: 1000px;
+	height: 750px;
+	margin: 0.5em auto;
+	padding: 1em;	 
+}
+
+#cabecera{
+	height: 25%;
+	background: #FFCC99;
+	padding-left: 5em; 
+}
+
+#menu{
+	height: 7%;
+	background: #E4E4E4;
+	
+}
+
+#cuerpo{
+	height: 61%;
+	background: #FFCC99;
+}
+
+#contenedor {
+	position: relative;
+	top: 20px;
+	left: 350px;
+}
+
+#pie{
+	height: 7%;
+	background: #E4E4E4;
+	text-align: center;
+	font-size: 17px;
+	
+}
+
+#horizontal{
+	padding:0;
+	list-style: none;
+}
+
+#horizontal li{
+	display: inline-block;
+}
+
+#horizontal li a{
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0 10px;
+	position: relative;
+	font-size: 20px;
+}
+
+#horizontal li a, 
+#horizontal li a:after, 
+#horizontal li a:before{
+	transition: all .5s;
+}
+
+#horizontal li a:hover{
+	color: #999900;
+}
+
+#horizontal li a:after{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #333;
+    height: 1px;
+}
+
+#horizontal li a:hover:after{
+	width: 100%;
+}
+
+
+.tbl label{
+	font-size: 20px;	
+}
