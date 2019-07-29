@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<f:metadata>
+			<f:viewParam name="id" value="#{conductorControl.id}" ></f:viewParam>
+			<f:viewAction action="#{conductorControl.loadData()}"  />
+			
+	</f:metadata>
+
+</h:head> 
+<body> 
+
+	<ui:composition template="/plantilla/template.xhtml">
+		<ui:define name="contenido">
+
+
+	
+
+<h:form class="centro">
+		<h:panelGrid columns="3">
+		
+			<h:outputLabel value="Codigo" />
+			<h:inputText value="#{conductorControl.conductor.codigo}"  id="txtCodigo"  />
+			<h:message for="txtCodigo"/>
+			
+			<h:outputLabel value="Cedula" />
+			<h:inputText value="#{conductorControl.conductor.cedula}" id="txtCedula" required="true" requiredMessage="Ingrese la Cedula" >
+			<f:validator validatorId="vcedula" /> 
+			 </h:inputText>
+			
+			<h:message for="txtCedula" style="color: red"/>
+			
+			<h:outputLabel value="Nombre" />
+			<h:inputText value="#{conductorControl.conductor.nombre}" id="txtNombre" required="true" requiredMessage="Ingrese el Nombre" >
+			<f:validator validatorId="vnombre" /> 
+			 </h:inputText>
+			
+			<h:message for="txtNombre" style="color: red"/>
+			
+			<h:outputLabel value="Apellido" />
+			<h:inputText value="#{conductorControl.conductor.apellido}" id="txtApellido" required="true" requiredMessage="Ingrese el Apellido">
+			<f:validator validatorId="vnombre" /> 
+			 </h:inputText>
+			 
+			<h:message for="txtApellido"  style="color: red"/>
+			
+			<h:outputLabel value="Edad" />
+			<h:inputText value="#{conductorControl.conductor.edad}" id="txtEdad"  required="true" requiredMessage="Ingrese la Edad">
+			<f:validator validatorId="vedad" /> 
+			 </h:inputText>
+			<h:message for="txtEdad" style="color: red"/>
+			
+			<h:outputLabel value="Usuario" />
+			<h:inputText value="#{conductorControl.conductor.usuario}" id="txtUsuario" required="true" requiredMessage="Ingrese el Usuario">
+			<f:validator validatorId="vusuario" /> 
+			 </h:inputText>
+			 
+			<h:message for="txtUsuario" style="color: red"/>
+			
+			<h:outputLabel value="Contrasena" />
+			<h:inputText value="#{conductorControl.conductor.contrasena}" id="txtContrasena" required="true" requiredMessage="Ingrese la Contrasena">
+			<f:validator validatorId="vusuario" /> 
+			 </h:inputText>
+			 
+			 
+			<h:message for="txtContrasena" style="color: red"/>
+			
+			<h:outputLabel value="Tipo Licencia" />
+			<h:inputText value="#{conductorControl.conductor.tipolicencia}" id="txtTipLicencia" required="true" requiredMessage="Ingrese el TipoLicencia">
+			<f:validator validatorId="vTipoL" /> 
+			 </h:inputText>
+			 
+			<h:message for="txtTipLicencia" style="color: red"/>
+			
+			<h:outputLabel value="Color" />
+			<h:inputText value="#{conductorControl.conductor.color}" id="txtColor" required="true" requiredMessage="Ingrese el Color">
+			<f:validator validatorId="vnombre" /> 
+			 </h:inputText>
+			 
+			<h:message for="txtColor" style="color: red"/>
+			
+			<h:outputLabel value="Placa" />
+			<h:inputText value="#{conductorControl.conductor.placa}" id="txtPlaca" required="true" requiredMessage="Ingrese el Placa">
+			<f:validator validatorId="vplaca" /> 
+			 </h:inputText>
+		
+			 
+			<h:message for="txtPlaca" style="color: red"/>
+			
+			<h:outputLabel value="Capacidad" />
+			<h:inputText value="#{conductorControl.conductor.capasidad}" id="txtCapacidad" required="true" requiredMessage="Ingrese la Capacidad" >
+			<f:validator validatorId="vcapacidad" /> 
+			 </h:inputText>
+			 
+			<h:message for="txtCapacidad"  style="color: red"/>
+			
+	
+			
+			<h:commandButton action="#{conductorControl.cargarDatos()}" value="Guardar" />
+		
+		</h:panelGrid>
+		
+	<!--  	
+		<h:commandButton action="#{conductorControl.nuevo()}" immediate="true" value="Limpiar" />
+		<h:commandButton action="#{conductorControl.ListarConduc()}" immediate="true" value="Listar" /> -->
+
+</h:form>
+
+
+</ui:define>
+</ui:composition>
+</body> 
+</html>

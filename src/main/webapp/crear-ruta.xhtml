@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	
+</h:head> 
+<body> 
+
+<h:form>
+		<h:panelGrid columns="3">
+		
+			<h:outputLabel value="Codigo" />
+			<h:inputText value="#{rutasControl.ruta.codigo}" id="txtCodigo"/>
+			<h:message for="txtCodigo"/>
+			
+			<h:outputLabel value="hsalida" />
+			<h:inputText value="#{rutasControl.ruta.horaSalidaAS}" id="txthsalidaAS" />
+			<h:message for="txthsalidaAS"/>
+			
+			<h:outputLabel value="hllegada" />
+			<h:inputText value="#{rutasControl.ruta.horaLlegadaAS}" id="txthllegadaAS" />
+			<h:message for="txthllegadaAS"/>
+			
+			<h:outputLabel value="desdeAS" />
+			<h:inputText value="#{rutasControl.ruta.desdeAS}" id="txtdesdeAS" />
+			<h:message for="txtdesdeAS"/>
+			
+			<h:outputLabel value="haciaAS" />
+			<h:inputText value="#{rutasControl.ruta.haciaAS}" id="txthaciaAS" />
+			<h:message for="txthaciaAS"/>
+			
+			
+			
+			
+			<h:outputLabel value="hsalida" />
+			<h:inputText value="#{rutasControl.ruta.horaSalidarRT}" id="txthsalidaRT" />
+			<h:message for="txthsalidaRT"/>
+			
+			<h:outputLabel value="hllegada" />
+			<h:inputText value="#{rutasControl.ruta.horaLlegadaRT}" id="txthllegadaRT" />
+			<h:message for="txthllegadaRT"/>
+			
+			<h:outputLabel value="desdeRT" />
+			<h:inputText value="#{rutasControl.ruta.desdeRT}" id="txtdesdeRT" />
+			<h:message for="txtdesdeRT"/>
+			
+			<h:outputLabel value="haciaAS" />
+			<h:inputText value="#{rutasControl.ruta.haciaRT}" id="txthaciaRT" />
+			<h:message for="txthaciaRT"/>
+			
+			<h:outputLabel value="Codigo GENERAD" />
+			<h:inputText value="#{rutasControl.ruta.codigoRuta}" id="txtCodigoRuta"/>
+			<h:message for="txtCodigoRuta"/>
+			
+			<h:outputLabel value="Conductor" />
+			<h:inputText value="#{rutasControl.ruta.idCondcutorTem}" id="txtConductor" >
+				<f:ajax listener="#{rutasControl.consultarConductor()}" render="datosConductor errores" >  </f:ajax>
+			</h:inputText>
+			
+			<h:panelGroup id="datosConductor">
+				
+				<h:message for="txtConductor"/>
+				
+				#{rutasControl.ruta.conductor.nombre}
+				
+			</h:panelGroup>
+			
+			
+			
+			<h:outputText value="" />
+			<h:commandButton action="#{rutasControl.guardarDatos()}" value="Guardar" />
+		
+		</h:panelGrid>
+		
+		<h:messages id="errores" />
+
+
+
+</h:form>
+
+</body> 
+</html>

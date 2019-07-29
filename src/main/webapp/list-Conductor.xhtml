@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<f:metadata>
+			<f:viewParam name="id" value="#{conductorControl.id}" ></f:viewParam>
+	</f:metadata>
+
+</h:head> 
+<body> 
+
+<ui:composition template="/plantilla/template.xhtml">
+		<ui:define name="contenido">
+
+
+ 
+<h:form class="listarC">
+		
+		<h:dataTable value="#{conductorControl.listadoConductores}" var="conductor" >
+		
+				<h:column> 
+				
+					<f:facet name="header"> Codigo </f:facet>
+					#{conductor.codigo}				
+					</h:column>
+					
+				<h:column> 
+				
+					<f:facet name="header"> Cedula </f:facet>
+					#{conductor.cedula}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Nombre </f:facet>
+					#{conductor.nombre}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Apellido </f:facet>
+					#{conductor.apellido}				
+				</h:column>
+				
+				
+				<h:column> 
+				
+					<f:facet name="header"> Edad </f:facet>
+					#{conductor.edad}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Usuario </f:facet>
+					#{conductor.usuario}				
+				</h:column>
+				
+				
+				<h:column> 
+				
+					<f:facet name="header"> Contrasena </f:facet>
+					#{conductor.contrasena}				
+				</h:column>
+				
+				
+				<h:column> 
+				
+					<f:facet name="header"> TipoLicencia </f:facet>
+					#{conductor.tipolicencia}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Color </f:facet>
+					#{conductor.color}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Placa </f:facet>
+					#{conductor.placa}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Capacidad </f:facet>
+					#{conductor.capasidad}				
+				</h:column>
+				
+			<h:column> 
+				
+					<f:facet name="header"> Acciones </f:facet>
+					<h:commandButton action="#{conductorControl.editar(conductor.codigo)}" immediate="true" value="Editar" />
+					<h:commandButton action="#{conductorControl.borrar(conductor.codigo)}" immediate="true" value="Borrar" />
+					
+								
+				</h:column>
+				
+		
+		
+		</h:dataTable>
+		
+<!--   <h:commandButton action="#{conductorControl.nuevo()}" immediate="true" value="Nuevo" />  -->
+		
+		
+		
+		
+
+
+
+</h:form>
+
+
+</ui:define>
+</ui:composition>
+</body> 
+</html>

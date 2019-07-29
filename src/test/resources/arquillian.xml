@@ -17,7 +17,7 @@
 -->
 <arquillian xmlns="http://jboss.org/schema/arquillian"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://jboss.org/schema/arquillian
+   xsi:schemaLocation="http://jboss.org/schema/arquillian.xml
         http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
 
    <!-- Uncomment to have test archives exported to the file system for inspection -->
