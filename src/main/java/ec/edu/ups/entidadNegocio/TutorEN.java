@@ -1,16 +1,16 @@
 package ec.edu.ups.entidadNegocio;
 
-public class TutorEN extends PersonaEN{
+public class TutorEN {
 
 	//atributos de Tutor
-	private String codigo;
+	private int codigo;
 	private String titulo;
 	
 	//Getters y Setters
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public String getTitulo() {

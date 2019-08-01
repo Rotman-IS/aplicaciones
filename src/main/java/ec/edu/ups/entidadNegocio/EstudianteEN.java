@@ -1,16 +1,16 @@
 package ec.edu.ups.entidadNegocio;
 
-public class EstudianteEN extends PersonaEN{
+public class EstudianteEN {
 
 	//atributos de Estudiante
-	private String codigo;
+	private int codigo;
 	private int aniosEstudio;
 	
 	//Getters y Setters
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public int getAniosEstudio() {
