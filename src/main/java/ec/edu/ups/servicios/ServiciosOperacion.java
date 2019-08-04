@@ -6,8 +6,8 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-
 
 import ec.edu.ups.entidadNegocio.RepresentanteEN;
 import ec.edu.ups.objetoNegocio.RepresentanteON;
@@ -20,7 +20,14 @@ public class ServiciosOperacion {
 	
 	//http://localhost:8080/JSF-RutasTE/ws/operaciones/listar
 	
-	
+	@POST
+	@Path("/login/{usuario}/{contrasenia}")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public RepresentanteEN login(@PathParam("usuario") String usuario, @PathParam("contrasenia") String contrasenia ) {
+		System.out.println("llega al servicio: "+ usuario+" pass: "+contrasenia);
+		return rON.login(usuario, contrasenia);
+	}
 	
 	@POST
 	@Path("/insertar")

@@ -12,11 +12,13 @@ public class RepresentanteON {
 	@Inject
 	private RepresentanteDAO rDAO;
 	
-	
 	public void guardar(RepresentanteEN r) {
 		rDAO.create(r);
 		
 	}
 	
+	public RepresentanteEN login(String user, String pass) {
+		return rDAO.validarLogin(user, pass);
+	}
 	
 }

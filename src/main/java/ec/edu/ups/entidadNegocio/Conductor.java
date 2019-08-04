@@ -4,6 +4,8 @@ package ec.edu.ups.entidadNegocio;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,31 +19,21 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name= "TBL_CONDUCTORES")
-public class Conductor {
+@Table(name="tbl_conductor")
+@AttributeOverrides(
+		value = {
+				@AttributeOverride(name="cedula", column = @Column(name="cedula_cond")),
+				@AttributeOverride(name="nombre", column = @Column(name="nombre_cond")),
+				@AttributeOverride(name="apellido", column = @Column(name="apellido_cond")),
+				@AttributeOverride(name="edad", column = @Column(name="eda_cond")),
+		}
+		)
+public class Conductor extends Persona {
 
 	@Id
 	@GeneratedValue
 	@Column(name="con_codigo")
 	private int codigo;
-
-	@Column(name="con_cedula")
-	@Size(min = 10, max = 10)
-	private String cedula;
-
-	@NotNull
-	@Column(name="con_nombre")
-	@Size(min = 3, max = 30)
-	private String nombre;
-
-	@NotNull
-	@Column(name="con_apellido")
-	@Size(min = 4, max = 30)
-	private String apellido;
-
-	@NotNull
-	@Column(name="con_edad")
-	private int edad;
 	
 	@NotNull
 	@Column(name="con_usuario")
@@ -85,38 +77,6 @@ public class Conductor {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public String getCedula() {
-		return cedula;
-	}
-
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
 	}
 
 	public String getUsuario() {
@@ -176,18 +136,17 @@ public class Conductor {
 	public void setRutas(List<Ruta> rutas) {
 		this.rutas = rutas;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Conductor [codigo=" + codigo + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", edad=" + edad + ", usuario=" + usuario + ", contrasena=" + contrasena + ", tipolicencia="
+		return "Conductor [codigo=" + codigo + ", usuario=" + usuario + ", contrasena=" + contrasena + ", tipolicencia="
 				+ tipolicencia + ", color=" + color + ", placa=" + placa + ", capasidad=" + capasidad + ", rutas="
 				+ rutas + "]";
 	}
 
 	//se agrego para rutas paso 2
 	//mostrar las cajas de texto de rutas y que inicialice en vacio
-	
+
 	public void addRutas(Ruta rut){
 		
 		if(rutas== null) {
