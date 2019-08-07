@@ -63,6 +63,13 @@ public class RepresentanteDAO {
 		return (RepresentanteEN) q.getSingleResult();
 	}
 	
+	public RepresentanteEN recuperar(int codigo) {
+		String jpql = "SELECT rep FROM RepresentanteEN rep WHERE rep.codigo = :id";
+		Query q = em.createQuery(jpql, RepresentanteEN.class );
+		q.setParameter("id", codigo);
+		return (RepresentanteEN) q.getSingleResult();
+	}
+	
 	
 	
 	

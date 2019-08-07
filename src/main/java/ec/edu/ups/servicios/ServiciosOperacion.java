@@ -13,8 +13,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import ec.edu.ups.entidadNegocio.EstudianteEN;
 import ec.edu.ups.entidadNegocio.RepresentanteEN;
 import ec.edu.ups.entidadNegocio.Ruta;
+import ec.edu.ups.objetoNegocio.EstudianteON;
 import ec.edu.ups.objetoNegocio.GestionRutas;
 import ec.edu.ups.objetoNegocio.RepresentanteON;
 
@@ -26,6 +28,9 @@ public class ServiciosOperacion {
 	
 	@Inject
 	private GestionRutas rutasON;
+	
+	@Inject
+	private EstudianteON estudianteON;
 	
 	//http://localhost:8080/JSF-RutasTE/ws/operaciones/listar
 	
@@ -102,6 +107,33 @@ public class ServiciosOperacion {
 	}
 	
 	
+	
+	@POST
+	@Path("/insertarEstudiante")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public EstudianteEN insertarEstudiante(EstudianteEN estudiante) {
+		try {
+			estudianteON.guardar(estudiante);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return estudiante;
+	}
+	
+	@GET
+	@Path("/recuperar/{id}")
+	public RepresentanteEN recuperar(@PathParam("id") int id) {
+		try {
+			RepresentanteEN aux=rON.recuperar(id);
+			aux.setEstudiante(null);
+			System.out.println(aux);
+			return aux;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 

@@ -45,4 +45,10 @@ public class RepresentanteON {
 		return rDAO.validarLogin(user, pass);
 	}
 	
+	
+	public RepresentanteEN recuperar(int codigo) {
+		return rDAO.recuperar(codigo);
+	}
+	
+	
 }
