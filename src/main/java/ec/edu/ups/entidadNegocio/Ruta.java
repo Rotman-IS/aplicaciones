@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -31,6 +33,7 @@ public class Ruta {
 //ruta de asistencia
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="rut_codigo")
 	private int codigo;
 	
@@ -179,7 +182,7 @@ public class Ruta {
 	
 	
 	
-
+	//content-type=application/json
 	//{"codigo":1,"horaSalidaAS":"7:00 am","horaLlegadaAS":"8:00 am","desdeAS":"San Sebastian","haciaAS":"UPS","horaSalidarRT":"13:00 pm","horaLlegadaRT":"14:00 pm","desdeRT":"UPS","haciaRT":"San Sebastian","codigoRuta":"1234asdff"}
 	
 	

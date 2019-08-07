@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+</h:head> 
+<body> 
+
+<ui:composition template="/plantilla/template.xhtml">
+		<ui:define name="contenido">
+
+
+ 
+<h:form class="listarC">
+		
+		<h:dataTable value="#{representanteControl.listadoRepresentante}" var="representante" >
+		
+				<h:column> 
+				
+					<f:facet name="header"> Codigo </f:facet>
+					#{representante.codigo}				
+					</h:column>
+					
+				<h:column> 
+				
+					<f:facet name="header"> Cedula </f:facet>
+					#{representante.cedula}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Nombre </f:facet>
+					#{representante.nombre}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Apellido </f:facet>
+					#{representante.apellido}				
+				</h:column>
+				
+				
+				<h:column> 
+				
+					<f:facet name="header"> Edad </f:facet>
+					#{representante.edad}				
+				</h:column>
+				
+				<h:column> 
+				
+					<f:facet name="header"> Usuario </f:facet>
+					#{representante.usuario}				
+				</h:column>
+				
+				
+				<h:column> 
+				
+					<f:facet name="header"> Contrasena </f:facet>
+					#{representante.contrasenia}				
+				</h:column>
+				
+
+		</h:dataTable>
+		
+		<h:inputText value="#{representanteControl.representante.cedula}"  />
+		
+		<h:commandButton action="#{representanteControl.cedula()}" value="Buscar" />
+		
+
+</h:form>
+
+
+</ui:define>
+</ui:composition>
+</body> 
+</html>
